@@ -1,0 +1,59 @@
+{% extends 'base.html' %} {% load static %} {% block title %} About{% endblock%}
+{% block head %}
+<style>
+  .counter {
+    background-image: url("{% static 'images/background-1.jpg' %}");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 30vh;
+    width: 100%;
+    color: #fff
+  }
+</style>
+<link rel="stylesheet" href="{% static 'css/about.css' %}" />
+{% endblock head %} {% block body %}
+    <section class="about top">
+      <div class="container flex">
+        <div class="left">
+          <div class="heading">
+            <h1>WELCOME</h1>
+            <h3>Hotel<span>Booking</span></h3>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit illum
+            quisquam beatae libero voluptas impedit iusto voluptatibus, nemo animi.
+            Praesentium soluta cumque, aliquid reiciendis ducimus maxime impedit
+            officiis alias ullam quod distinctio.
+          </p>
+          <button class="primary-btn">ABOUT US</button>
+        </div>
+        <div class="right">
+          <img src="{% static 'images/about.jpg' %}" alt="" />
+        </div>
+      </div>
+    </section>
+    <section class="counter top">
+      <div class="container grid">
+        <div class="box">
+          <h1>2500</h1>
+          <hr>
+          <span>Customer</span>
+        </div>
+        <div class="box">
+          <h1>1250</h1>
+          <hr>
+          <span>Happy Customer</span>
+        </div>
+        <div class="box">
+          <h1>1500</h1>
+          <hr>
+          <span>Expert Technicians</span>
+        </div>
+        <div class="box">
+          <h1>3500</h1>
+          <hr>
+          <span>Desktop Reaired</span>
+        </div>
+      </div>
+    </section>
+{% endblock body %} {% block js %} {% endblock js %}

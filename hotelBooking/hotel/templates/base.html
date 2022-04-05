@@ -9,10 +9,9 @@
       src="https://kit.fontawesome.com/0493c978ee.js"
       crossorigin="anonymous"
     ></script>
-    {% block head %}
-    {% endblock head %}
-    <title>{% block title %}{% endblock title %}</title>
     <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+    {% block head %} {% endblock head %}
+    <title>{% block title %}{% endblock title %}</title>
   </head>
   <body>
     <header class="header">
@@ -22,24 +21,21 @@
         </div>
         <div class="navlinks">
           <ul id="menulist">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#hotels">Hotels</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/hotels">Hotels</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
             <li><i class="fa fa-search"></i></li>
             <li><button class="primary-btn">SignUp</button></li>
           </ul>
-          <span id="menu_bars" class="fa fa-bars"></span>
+          <span class="fa fa-bars" onclick="menutoggle()"></span>
         </div>
       </div>
     </header>
     {% block body %} {% endblock body %}
-
     <script>
-      var menuList = document.getElementById("menulist");
-      let menuBar = document.getElementById("menu_bars");
+      var menulist = document.getElementById('menulist');
       menulist.style.maxHeight = "0px";
-      menuBar.addEventListener("click", menutoggle());
 
       function menutoggle() {
         if (menulist.style.maxHeight == "0px") {

@@ -1,3 +1,4 @@
+from distutils.command.upload import upload
 from statistics import mode
 from django.db import models
 
@@ -5,5 +6,12 @@ from django.db import models
 class Hotel(models.Model):
     hotel_id = models.AutoField
     hotel_name = models.CharField(max_length=100)
+    location = models.CharField(max_length=100,default="")
+    location_url = models.URLField(max_length=500,default="")
+    price = models.IntegerField(default=0)
     desc = models.CharField(max_length=300)
     pub_date = models.DateField()
+    main_image = models.ImageField(upload_to="hotel/images",default="")
+
+    def __str__(self):
+        return self.hotel_name

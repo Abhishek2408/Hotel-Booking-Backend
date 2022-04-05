@@ -1,0 +1,128 @@
+{% extends 'base.html' %} {% load static %} {% block title %} Hotels{% endblock%}
+{% block head %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
+  integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+  integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"
+  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="{% static 'css/hotels.css' %}" />
+<!-- <link rel="stylesheet" href="{% static 'css/about.css' %}" /> -->
+{% endblock head %} 
+{% block body %}
+    <section class="book">
+      <div class="container flex_space">
+        <div class="text">
+          <h1><span>Book </span> Your Rooms</h1>
+        </div>
+        <div class="form">
+          <form class="grid">
+            <input type="text" placeholder="State/City/Area" />
+            <input type="date" placeholder="Araival Date" />
+            <input type="number" placeholder="Adults" />
+            <input type="number" placeholder="Childern" />
+            <input type="submit" value="CHECK AVAILABILITY" />
+          </form>
+        </div>
+      </div>
+    </section>
+    <section class="rooms">
+      <div class="container top">
+        <div class="heading">
+          <h1>EXPOLRE</h1>
+          <h2>Our Rooms</h2>
+        </div>
+      </div>
+      <div class="content mtop">
+        <div class="owl-carousel owl-carousel1 owl-theme">
+          {% for hotel in hotel %}
+          <div class="items">
+            <div class="image">
+              <img src="/media/{{hotel.main_image}}" alt="">
+            </div>
+            <div class="text">
+              <h3>{{hotel.hotel_name}}</h3>
+              <div class="rate flex">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+              <p>{{hotel.desc|slice:120}}
+              </p>
+              <div class="button flex">
+                <button class="primary-btn">BOOK NOW</button>
+                <h3>₹ {{hotel.price}} <span> <br> Per Night </span> </h3>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="owl-carousel owl-carousel1 owl-theme">
+          {% for hotel in hotel %}
+          <div class="items">
+            <div class="image">
+              <img src="/media/{{hotel.main_image}}" alt="">
+            </div>
+            <div class="text">
+              <h3>{{hotel.hotel_name}}</h3>
+              <div class="rate flex">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+              <p>{{hotel.desc|slice:120}}
+              </p>
+              <div class="button flex">
+                <button class="primary-btn">BOOK NOW</button>
+                <h3>₹ {{hotel.price}} <span> <br> Per Night </span> </h3>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+{% endblock body %}
+{% block js %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+  integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"
+  integrity="sha512-gY25nC63ddE0LcLPhxUJGFxa2GoIyA5FLym4UJqHDEMHjp8RET6Zn/SHo1sltt3WuVtqfyxECP38/daUc/WVEA=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+  $('.owl-carousel1').owlCarousel({
+    loop: false,
+    margin: 40,
+    nav: true,
+    dots: false,
+    navText: [
+      "<i class='fa fa-chevron-left'></li>",
+      "<i class='fa fa-chevron-right'></li>",
+    ],
+    responsive: {
+      0: {
+        items: 1
+      },
+      768: {
+        items: 2,
+        margin: 5,
+      },
+      1000: {
+        items: 4
+      }
+    }
+  })
+</script>
+{% endblock js %}

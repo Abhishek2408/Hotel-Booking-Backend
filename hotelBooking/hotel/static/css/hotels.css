@@ -1,0 +1,133 @@
+/* ===================book======================== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 20px;
+}
+
+input {
+  outline: none;
+  border: none;
+  width: 100%;
+}
+
+.book {
+  padding: 40px 0;
+  background: #282834;
+  color: #fff;
+}
+
+h1 {
+  font-family: serif;
+}
+
+.book h1 {
+  font-size: 28px;
+}
+
+.book h1 span {
+  color: #7fc142;
+}
+
+.book input {
+  padding: 20px;
+}
+
+.book input:nth-last-child(1) {
+  background: #7fc142;
+  color: #fff;
+}
+
+/* =========================hotel List================== */
+.top {
+  margin-top: 80px;
+}
+
+.mtop {
+  margin-top: 40px;
+}
+
+.heading h1 {
+  left: 35%;
+  font-size: 100px;
+  font-weight: 500;
+  opacity: 0.1;
+  font-family: serif;
+  position: absolute;
+  top: -30px;
+}
+
+.heading h2 {
+  text-align: center;
+  margin: 30px 0;
+  font-size: 45px;
+  font-family: serif;
+  font-weight: 400;
+}
+
+#statement {
+  margin-top: 40px;
+}
+
+.rooms {
+  position: relative;
+}
+
+.rooms .text {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: none;
+  padding: 30px;
+}
+
+.rooms i {
+  font-size: 12px;
+  color: #fbb234;
+  margin: 15px 0;
+  margin-right: 5px;
+}
+
+.rooms p {
+  margin: 20px 0;
+  opacity: 0.7;
+}
+
+.rooms h3 {
+  font-size: 20px;
+  line-height: 20px;
+  margin-left: 20px;
+  font-weight: 500;
+  color: #7fc142;
+}
+
+.rooms h3 span {
+  font-size: 10px;
+  font-weight: 400;
+  color: #000;
+}
+
+.owl-carousel1 .owl-nav .owl-prev,
+.owl-carousel1 .owl-nav .owl-next {
+  position: absolute;
+  top: -15%;
+  height: 50px;
+  width: 50px;
+  background: #7fc142 !important;
+}
+
+.owl-carousel1 .owl-nav .owl-prev i,
+.owl-carousel1 .owl-nav .owl-next i {
+  color: #fff;
+}
+
+.owl-carousel1 .owl-nav .owl-prev {
+  left: 0;
+}
+
+.owl-carousel1 .owl-nav .owl-next {
+  right: 0;
+}
+
+.owl-carousel1 .owl-nav.disabled,
+.owl-carousel1 .owl-dots.disabled {
+  display: block;
+}

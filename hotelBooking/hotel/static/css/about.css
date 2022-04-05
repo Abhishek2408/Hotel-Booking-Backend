@@ -1,0 +1,67 @@
+/* ===========================about========================== */
+.left,.right{
+    width: 50%;
+    padding: 30px;
+}
+.top{
+    margin-top: 80px;
+}
+.mtop{
+    margin-top: 40px;
+}
+.heading h1{
+    font-size: 100px;
+    font-weight: 500;
+    opacity: 0.1;
+    font-family: serif;
+    position: absolute;
+    top: -30px;
+}
+.heading h3{
+    margin: 30px 0;
+    font-size: 45px;
+    font-family: serif;
+    font-weight: 400;
+}
+.about .heading h1{
+    top: 55px;
+}
+
+.about{
+    position: relative;
+}
+.about .left{
+    margin-top: 30px;
+}
+.about p{
+    font-size: 15px;
+}
+.about button{
+    margin: 30px 0;
+}
+.right img{
+    height: 100%;
+    width: 100%;
+    object-fit:contain;
+}
+
+/* ===========================counter========================== */
+.grid{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: space-between;
+    padding-top: 60px;
+}
+
+.counter h1{
+    font-size: 50px;
+}
+
+.counter hr {
+    width: 50%;
+    margin: 10px auto;
+    background: #7fc142;
+    height: 2px;
+    border: none;
+}
