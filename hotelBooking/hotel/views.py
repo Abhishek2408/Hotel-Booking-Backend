@@ -10,7 +10,6 @@ def index(request):
 
 def hotels(request):
     hotels = Hotel.objects.all()
-    print(hotels)
     n = len(hotels)
     nSlides = n//4 + ceil((n/4)-(n//4))
     params = {'no_of_slides':nSlides,'range':range(nSlides),'hotel': hotels}
