@@ -1,5 +1,6 @@
 from distutils.command.upload import upload
 from statistics import mode
+from unicodedata import category
 from django.db import models
 
 # Create your models here.
@@ -8,6 +9,7 @@ class Hotel(models.Model):
     hotel_name = models.CharField(max_length=100)
     location = models.CharField(max_length=100,default="")
     location_url = models.URLField(max_length=500,default="")
+    category = models.CharField(max_length=100,default="")
     price = models.IntegerField(default=0)
     desc = models.CharField(max_length=300)
     pub_date = models.DateField()

@@ -36,14 +36,16 @@
         </div>
       </div>
       <div class="content mtop">
+        {% for hotel, range, nSlides,cat in allHotels %}
+        <h1 style="text-align: center; font-size: 50px; margin: 50px 0;">{{cat}}</h1>
         <div class="owl-carousel owl-carousel1 owl-theme">
-          {% for hotel in hotel %}
+          {% for i in hotel %}
           <div class="items">
             <div class="image">
-              <img src="/media/{{hotel.main_image}}" alt="">
+              <img src="/media/{{i.main_image}}" alt="">
             </div>
             <div class="text">
-              <h3>{{hotel.hotel_name}}</h3>
+              <h3>{{i.hotel_name}}</h3>
               <div class="rate flex">
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
@@ -51,46 +53,18 @@
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
               </div>
-              <p>{{hotel.desc|slice:120}}
+              <p>{{i.desc|slice:100}}
               </p>
+              <h3>₹ {{i.price}} <span>/ Per Night </span> </h3>
               <div class="button flex">
-                <button class="primary-btn">BOOK NOW</button>
-                <h3>₹ {{hotel.price}} <span> <br> Per Night </span> </h3>
+                <button class="book-btn">BOOK NOW</button>
+                <a href="/hotelview/{{i.id}}"><button class="view-btn" id="gv{{i.id}}">VIEW DETAILS</button></a>
               </div>
             </div>
           </div>
           {% endfor %}
         </div>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <div class="owl-carousel owl-carousel1 owl-theme">
-          {% for hotel in hotel %}
-          <div class="items">
-            <div class="image">
-              <img src="/media/{{hotel.main_image}}" alt="">
-            </div>
-            <div class="text">
-              <h3>{{hotel.hotel_name}}</h3>
-              <div class="rate flex">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-              </div>
-              <p>{{hotel.desc|slice:120}}
-              </p>
-              <div class="button flex">
-                <button class="primary-btn">BOOK NOW</button>
-                <h3>₹ {{hotel.price}} <span> <br> Per Night </span> </h3>
-              </div>
-            </div>
-          </div>
-          {% endfor %}
-        </div>
+        {% endfor %}
       </div>
     </section>
 {% endblock body %}
