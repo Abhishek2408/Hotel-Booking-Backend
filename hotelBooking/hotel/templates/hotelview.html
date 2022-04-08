@@ -1,7 +1,49 @@
-{% extends 'base.html' %} {% load static %} 
+{% extends 'base.html' %} {% load static %}
 {% block title %}{{hotel.hotel_name}}{% endblock%}
-{% block head %}{% endblock head %} 
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/hotelview.css' %}" />
+{% endblock head %}
 {% block body %}
+<div class="small-container single-product">
+    <div class="row">
+        <div class="col-2">
+            <img id="ProductImg" src="/media/{{hotel.main_image}}" alt="">
+            <div class="small-img-row">
+                <div class="small-img-col">
+                    <img class="small-img" src="/media/{{hotel.main_image}}" alt="">
+                </div>
+                <div class="small-img-col">
+                    <img class="small-img" src="{% static 'images/banner2.jpg' %}" alt="">
+                </div>
+                <div class="small-img-col">
+                    <img class="small-img" src="/media/{{hotel.main_image}}" alt="">
+                </div>
+                <div class="small-img-col">
+                    <img class="small-img" src="/media/{{hotel.main_image}}" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="col-2">
+            <h1>{{hotel.hotel_name}}</h1>
+            <h3>₹ {{hotel.price}} <span>/ Per Night </span> </h3>
+            <button class="primary-btn">BOOK NOW</button>
+            <h3>Product Details<i class="fa fa-indent"></i></h3>
+            <br>
+            <p>{{hotel.desc}}</p>
+        </div>
+    </div>
+</div>
 {% endblock body %}
 {% block js %}
+<script>
+    var ProductImg = document.getElementById('ProductImg')
+    var SmallImg = document.getElementsByClassName('small-img')
+    console.log(SmallImg)
+    for(let i in SmallImg){
+        SmallImg[i].onclick = function(){
+        ProductImg.src = SmallImg[i].src;
+    }
+}
+    
+</script>
 {% endblock js %}
