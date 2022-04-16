@@ -1,49 +1,207 @@
-{% extends 'base.html' %} {% load static %}
-{% block title %}{{hotel.hotel_name}}{% endblock%}
-{% block head %}
-    <link rel="stylesheet" href="{% static 'css/hotelview.css' %}" />
-{% endblock head %}
-{% block body %}
-<div class="small-container single-product">
+{% extends 'base.html' %} {% load static %} {% block title%}{{hotel.hotel_name}}{% endblock%} {% block head %}
+<link rel="stylesheet" href="{% static 'css/hotelview.css' %}" />
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+  integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+{% endblock head %} {% block body %}
+<div class="container">
+  <div class="small-container single-product">
     <div class="row">
-        <div class="col-2">
-            <img id="ProductImg" src="/media/{{hotel.main_image}}" alt="">
-            <div class="small-img-row">
-                <div class="small-img-col">
-                    <img class="small-img" src="/media/{{hotel.main_image}}" alt="">
-                </div>
-                <div class="small-img-col">
-                    <img class="small-img" src="{% static 'images/banner2.jpg' %}" alt="">
-                </div>
-                <div class="small-img-col">
-                    <img class="small-img" src="/media/{{hotel.main_image}}" alt="">
-                </div>
-                <div class="small-img-col">
-                    <img class="small-img" src="/media/{{hotel.main_image}}" alt="">
-                </div>
-            </div>
+      <div class="col-2">
+        <img id="ProductImg" src="/media/{{hotel.main_image}}" alt="" />
+        <div class="small-img-row">
+          <div class="small-img-col">
+            <img class="small-img" src="/media/{{hotel.main_image}}" alt="" />
+          </div>
+          <div class="small-img-col">
+            <img
+              class="small-img"
+              src="{% static 'images/banner2.jpg' %}"
+              alt=""
+            />
+          </div>
+          <div class="small-img-col">
+            <img class="small-img" src="/media/{{hotel.main_image}}" alt="" />
+          </div>
+          <div class="small-img-col">
+            <img class="small-img" src="/media/{{hotel.main_image}}" alt="" />
+          </div>
         </div>
-        <div class="col-2">
-            <h1>{{hotel.hotel_name}}</h1>
-            <h3>₹ {{hotel.price}} <span>/ Per Night </span> </h3>
-            <button class="primary-btn">BOOK NOW</button>
-            <h3>Product Details<i class="fa fa-indent"></i></h3>
-            <br>
-            <p>{{hotel.desc}}</p>
+      </div>
+      <div class="col-2">
+        <h1>{{hotel.hotel_name}}</h1>
+        <i class="fas fa-users"></i>
+        <span>King Room with Plaza Graden View</span>
+        <div>
+          <h3>₹ {{hotel.price}} <span>/ Per Night </span></h3>
+          <a class="primary-btn">BOOK NOW</a>
+          <h3>Product Details<i class="fa fa-indent"></i></h3>
         </div>
+        <br />
+        <div class="map-desc">
+          <p class="hotel-desc">{{hotel.desc}}</p>
+          <div>
+            <iframe
+              src="{{hotel.location_url}}"
+              width="200"
+              height="200"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+  <div class="menu-tabs">
+    <div class="card">
+      <div class="card-body">
+        <ul class="navbar">
+          <li>
+            <a href="" class="tab active" data-id="OVERVIEW">
+              <span class="icon"><i class="fa fa-file"></i></span>
+              <span class="text">OVERVIEW</span>
+            </a>
+          </li> 
+          <li> 
+            <a href="" class="tab" data-id="LOCATION">
+              <span class="icon"><i class="fa fa-location-dot"></i></span>
+              <span class="text">LOCATION</span>
+            </a>
+          </li>
+          <li>
+            <a href="" class="tab" data-id="FACILITIES">
+              <span class="icon"><i class="fa fa-house-medical"></i></span>
+              <span class="text">FACILITIES</span>
+            </a>
+          </li>
+          <li>
+            <a href="" class="tab" data-id="PROPERTY_RULES">
+              <span class="icon"><i class="fa fa-building-shield"></i></span>
+              <span class="text">PROPERTY RULES</span>
+            </a>
+          </li>
+          <li>
+            <a href="" class="tab" data-id="USER_REVIEWS">
+              <span class="icon"><i class="fa fa-building-user"></i></span>
+              <span class="text">USER REVIEWS</span>
+            </a>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane active" id="OVERVIEW">
+            <div class="tab-bg">
+              <h2>About Holiday In Resort</h2>
+              <h3>A splendid vacation, Holiday in resort</h3>
+              <div class="points">
+                  <p>
+                      <ol>
+                          <li class="li-style"><span> The rooms offer a plethora of views,including views of lush green gardens, the pool and the Arabian Sea.</span></li>
+                          <li class="li-style"><span> popular beach, Mobor Beach is located just 300 m away from the resort.</span></li>
+                          <li class="li-style"><span> The resort offers a variety of recreational sports including aqua zorbing and other outdoor games.</span></li>
+                          <li class="li-style"><span> Enjoy dining by the pool on Mediterranean cuisine at the in-house restaurant, Fig and Olive.</span></li>
+                      </ol>
+                  </p>
+              </div>
+          </div>
+          <div class="tab-pane" id="LOCATION">
+            <div class="tab-bg">
+              <h2>About Holiday In Resort</h2>
+              <h3>A splendid vacation, Holiday in resort</h3>
+              <div class="points">
+                  <p>
+                      <ol>
+                          <li class="li-style"><span> The rooms offer a plethora of views,including views of lush green gardens, the pool and the Arabian Sea.</span></li>
+                          <li class="li-style"><span> popular beach, Mobor Beach is located just 300 m away from the resort.</span></li>
+                          <li class="li-style"><span> The resort offers a variety of recreational sports including aqua zorbing and other outdoor games.</span></li>
+                          <li class="li-style"><span> Enjoy dining by the pool on Mediterranean cuisine at the in-house restaurant, Fig and Olive.</span></li>
+                      </ol>
+                  </p>
+              </div>
+          </div>
+          <div class="tab-pane" id="FACILITIES">
+            <div class="tab-bg">
+              <h2>About Holiday In Resort</h2>
+              <h3>A splendid vacation, Holiday in resort</h3>
+              <div class="points">
+                  <p>
+                      <ol>
+                          <li class="li-style"><span> The rooms offer a plethora of views,including views of lush green gardens, the pool and the Arabian Sea.</span></li>
+                          <li class="li-style"><span> popular beach, Mobor Beach is located just 300 m away from the resort.</span></li>
+                          <li class="li-style"><span> The resort offers a variety of recreational sports including aqua zorbing and other outdoor games.</span></li>
+                          <li class="li-style"><span> Enjoy dining by the pool on Mediterranean cuisine at the in-house restaurant, Fig and Olive.</span></li>
+                      </ol>
+                  </p>
+              </div>
+          </div>
+          <div class="tab-pane" id="PROPERTY_RULES">
+            <div class="tab-bg">
+              <h2>About Holiday In Resort</h2>
+              <h3>A splendid vacation, Holiday in resort</h3>
+              <div class="points">
+                  <p>
+                      <ol>
+                          <li class="li-style"><span> The rooms offer a plethora of views,including views of lush green gardens, the pool and the Arabian Sea.</span></li>
+                          <li class="li-style"><span> popular beach, Mobor Beach is located just 300 m away from the resort.</span></li>
+                          <li class="li-style"><span> The resort offers a variety of recreational sports including aqua zorbing and other outdoor games.</span></li>
+                          <li class="li-style"><span> Enjoy dining by the pool on Mediterranean cuisine at the in-house restaurant, Fig and Olive.</span></li>
+                      </ol>
+                  </p>
+              </div>
+          </div>
+          <div class="tab-pane" id="USER_REVIEWS">
+            <div class="tab-bg">
+              <h2>About Holiday In Resort</h2>
+              <h3>A splendid vacation, Holiday in resort</h3>
+              <div class="points">
+                  <p>
+                      <ol>
+                          <li class="li-style"><span> The rooms offer a plethora of views,including views of lush green gardens, the pool and the Arabian Sea.</span></li>
+                          <li class="li-style"><span> popular beach, Mobor Beach is located just 300 m away from the resort.</span></li>
+                          <li class="li-style"><span> The resort offers a variety of recreational sports including aqua zorbing and other outdoor games.</span></li>
+                          <li class="li-style"><span> Enjoy dining by the pool on Mediterranean cuisine at the in-house restaurant, Fig and Olive.</span></li>
+                      </ol>
+                  </p>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-{% endblock body %}
-{% block js %}
+{% endblock body %} {% block js %}
 <script>
-    var ProductImg = document.getElementById('ProductImg')
-    var SmallImg = document.getElementsByClassName('small-img')
-    console.log(SmallImg)
-    for(let i in SmallImg){
-        SmallImg[i].onclick = function(){
-        ProductImg.src = SmallImg[i].src;
-    }
-}
-    
+var ProductImg = document.getElementById("ProductImg");
+var SmallImg = document.getElementsByClassName("small-img");
+console.log(SmallImg);
+for (let i in SmallImg) {
+  SmallImg[i].onclick = function () {
+    ProductImg.src = SmallImg[i].src;
+  };
+} 
+</script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+<script>
+  // $(document).ready(function () {
+  //   // Add active class on tab click
+  //   $(".tab").on("click", function () {
+  //     var categoryId = $(this).data("id");
+  //     console.log(categoryId)
+  
+  //     $(".tab, .tab-pane").removeClass("active");
+  //     $(this).addClass("active");
+  //     $("#" + categoryId).addClass("active");
+  //   });
+  // });
+  tab = document.getElementsByClassName("tab");
+  console.log(tab)
+  console.log(tab)
+  
 </script>
 {% endblock js %}
