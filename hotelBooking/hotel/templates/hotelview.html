@@ -1,12 +1,9 @@
 {% extends 'base.html' %} {% load static %} {% block title%}{{hotel.hotel_name}}{% endblock%} {% block head %}
 <link rel="stylesheet" href="{% static 'css/hotelview.css' %}" />
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
   integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-  crossorigin="anonymous"
-  referrerpolicy="no-referrer"
-/>
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 {% endblock head %} {% block body %}
 <div class="container">
   <div class="small-container single-product">
@@ -18,11 +15,7 @@
             <img class="small-img" src="/media/{{hotel.main_image}}" alt="" />
           </div>
           <div class="small-img-col">
-            <img
-              class="small-img"
-              src="{% static 'images/banner2.jpg' %}"
-              alt=""
-            />
+            <img class="small-img" src="{% static 'images/banner2.jpg' %}" alt="" />
           </div>
           <div class="small-img-col">
             <img class="small-img" src="/media/{{hotel.main_image}}" alt="" />
@@ -45,15 +38,8 @@
         <div class="map-desc">
           <p class="hotel-desc">{{hotel.desc}}</p>
           <div>
-            <iframe
-              src="{{hotel.location_url}}"
-              width="200"
-              height="200"
-              style="border: 0"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
+            <iframe src="{{hotel.location_url}}" width="200" height="200" style="border: 0" allowfullscreen=""
+              loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
       </div>
@@ -64,31 +50,31 @@
       <div class="card-body">
         <ul class="navbar">
           <li>
-            <a href="" class="tab active" data-id="OVERVIEW">
+            <a href="#" class="tab active" data-id="OVERVIEW">
               <span class="icon"><i class="fa fa-file"></i></span>
               <span class="text">OVERVIEW</span>
             </a>
-          </li> 
-          <li> 
-            <a href="" class="tab" data-id="LOCATION">
+          </li>
+          <li>
+            <a href="#" class="tab" data-id="LOCATION">
               <span class="icon"><i class="fa fa-location-dot"></i></span>
               <span class="text">LOCATION</span>
             </a>
           </li>
           <li>
-            <a href="" class="tab" data-id="FACILITIES">
+            <a href="#" class="tab" data-id="FACILITIES">
               <span class="icon"><i class="fa fa-house-medical"></i></span>
               <span class="text">FACILITIES</span>
             </a>
           </li>
           <li>
-            <a href="" class="tab" data-id="PROPERTY_RULES">
+            <a href="#" class="tab" data-id="PROPERTY_RULES">
               <span class="icon"><i class="fa fa-building-shield"></i></span>
               <span class="text">PROPERTY RULES</span>
             </a>
           </li>
           <li>
-            <a href="" class="tab" data-id="USER_REVIEWS">
+            <a href="#" class="tab" data-id="USER_REVIEWS">
               <span class="icon"><i class="fa fa-building-user"></i></span>
               <span class="text">USER REVIEWS</span>
             </a>
@@ -96,112 +82,237 @@
         </ul>
         <div class="tab-content">
           <div class="tab-pane active" id="OVERVIEW">
-            <div class="tab-bg">
-              <h2>About Holiday In Resort</h2>
-              <h3>A splendid vacation, Holiday in resort</h3>
-              <div class="points">
-                  <p>
-                      <ol>
-                          <li class="li-style"><span> The rooms offer a plethora of views,including views of lush green gardens, the pool and the Arabian Sea.</span></li>
-                          <li class="li-style"><span> popular beach, Mobor Beach is located just 300 m away from the resort.</span></li>
-                          <li class="li-style"><span> The resort offers a variety of recreational sports including aqua zorbing and other outdoor games.</span></li>
-                          <li class="li-style"><span> Enjoy dining by the pool on Mediterranean cuisine at the in-house restaurant, Fig and Olive.</span></li>
-                      </ol>
-                  </p>
-              </div>
+            <h3 class="tab-bg-heading"> A splendid vacation, Holiday in resort</h3>
+            <div class="points">
+              <ul>
+                <li class="li-style"><span> The rooms offer a plethora of views,including views of lush green gardens,
+                    the pool and the Arabian Sea.</span></li>
+                <li class="li-style"><span> popular beach, Mobor Beach is located just 300 m away from the
+                    resort.</span></li>
+                <li class="li-style"><span> The resort offers a variety of recreational sports including aqua zorbing
+                    and other outdoor games.</span></li>
+                <li class="li-style"><span> Enjoy dining by the pool on Mediterranean cuisine at the in-house
+                    restaurant, Fig and Olive.</span></li>
+              </ul>
+            </div>
           </div>
           <div class="tab-pane" id="LOCATION">
             <div class="tab-bg">
-              <h2>About Holiday In Resort</h2>
-              <h3>A splendid vacation, Holiday in resort</h3>
-              <div class="points">
-                  <p>
-                      <ol>
-                          <li class="li-style"><span> The rooms offer a plethora of views,including views of lush green gardens, the pool and the Arabian Sea.</span></li>
-                          <li class="li-style"><span> popular beach, Mobor Beach is located just 300 m away from the resort.</span></li>
-                          <li class="li-style"><span> The resort offers a variety of recreational sports including aqua zorbing and other outdoor games.</span></li>
-                          <li class="li-style"><span> Enjoy dining by the pool on Mediterranean cuisine at the in-house restaurant, Fig and Olive.</span></li>
-                      </ol>
-                  </p>
+              <h3 class="tab-bg-heading">The Location of Holiday In Resort has been rated 4.6 by 815 guests</h3>
+              <div class="map-container">
+                <iframe src="{{hotel.location_url}}" class="map-size iframe_location" width="100%" height="300"
+                  style="border:0;" allowfullscreen="" loading="lazy"></iframe>
               </div>
+            </div>
           </div>
           <div class="tab-pane" id="FACILITIES">
             <div class="tab-bg">
-              <h2>About Holiday In Resort</h2>
-              <h3>A splendid vacation, Holiday in resort</h3>
-              <div class="points">
-                  <p>
-                      <ol>
-                          <li class="li-style"><span> The rooms offer a plethora of views,including views of lush green gardens, the pool and the Arabian Sea.</span></li>
-                          <li class="li-style"><span> popular beach, Mobor Beach is located just 300 m away from the resort.</span></li>
-                          <li class="li-style"><span> The resort offers a variety of recreational sports including aqua zorbing and other outdoor games.</span></li>
-                          <li class="li-style"><span> Enjoy dining by the pool on Mediterranean cuisine at the in-house restaurant, Fig and Olive.</span></li>
-                      </ol>
-                  </p>
+              <h3 class="tab-bg-heading">Facilities at Holiday Inn Resort</h3>
+              <div class="row">
+                <div class="col">
+                  <div class="fac-det">
+                    <h3>Safety and Hygiene</h3>
+                    <ol>
+                      <li class="li-style"><span>Maska</span></li>
+                      <li class="li-style"><span>Gloves</span></li>
+                      <li class="li-style"><span>Sanitizers</span></li>
+                      <li class="li-style"><span>Sanitizers installed</span></li>
+                    </ol>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="fac-det">
+                    <h3>Basic Facilities</h3>
+                    <ol>
+                      <li class="li-style"><span>Free Wi-Fi</span></li>
+                      <li class="li-style"><span>Elevator/Lift</span></li>
+                      <li class="li-style"><span>Air Conditioning</span></li>
+                      <li class="li-style"><span>24-Hour-Room Service</span></li>
+                      </ul>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="fac-det">
+                    <h3>Transfers</h3>
+                    <ol>
+                      <li class="li-style"><span>Paid Airport Transfers</span></li>
+                      <li class="li-style"><span>Paid Pickup/Drop</span></li>
+                      <li class="li-style"><span>Paid Shuttle Service</span></li>
+                      <li class="li-style"><span>Paid Railway Transfers</span></li>
+                    </ol>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="fac-det">
+                    <h3>Family and Kids</h3>
+                    <ol>
+                      <li class="li-style"><span>Kids Play Area</span></li>
+                      <li class="li-style"><span>Chilcare services</span></li>
+                      <li class="li-style"><span>Playground</span></li>
+                    </ol>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="fac-det">
+                    <h3>Food and Drinks</h3>
+                    <ol>
+                      <li class="li-style"><span>Bar</span></li>
+                      <li class="li-style"><span>Cafe</span></li>
+                      <li class="li-style"><span>Restaurant</span></li>
+                      <li class="li-style"><span>Coffee Shop</span></li>
+                    </ol>
+                  </div>
+                </div>
               </div>
+            </div>
           </div>
           <div class="tab-pane" id="PROPERTY_RULES">
             <div class="tab-bg">
-              <h2>About Holiday In Resort</h2>
-              <h3>A splendid vacation, Holiday in resort</h3>
+              <h3 class="tab-bg-heading">Check-in:<span id="hot-time">3PM</span>check-out:<span id="hot-time">12PM</span></h3>
               <div class="points">
-                  <p>
-                      <ol>
-                          <li class="li-style"><span> The rooms offer a plethora of views,including views of lush green gardens, the pool and the Arabian Sea.</span></li>
-                          <li class="li-style"><span> popular beach, Mobor Beach is located just 300 m away from the resort.</span></li>
-                          <li class="li-style"><span> The resort offers a variety of recreational sports including aqua zorbing and other outdoor games.</span></li>
-                          <li class="li-style"><span> Enjoy dining by the pool on Mediterranean cuisine at the in-house restaurant, Fig and Olive.</span></li>
-                      </ol>
-                  </p>
+                <p>
+                <ol>
+                  <li class="li-style"><span> Suitale for children.</span></li>
+                  <li class="li-style"><span> Pets are not allowed.</span></li>
+                </ol>
+                </p>
               </div>
+            </div>
           </div>
           <div class="tab-pane" id="USER_REVIEWS">
             <div class="tab-bg">
-              <h2>About Holiday In Resort</h2>
-              <h3>A splendid vacation, Holiday in resort</h3>
-              <div class="points">
-                  <p>
-                      <ol>
-                          <li class="li-style"><span> The rooms offer a plethora of views,including views of lush green gardens, the pool and the Arabian Sea.</span></li>
-                          <li class="li-style"><span> popular beach, Mobor Beach is located just 300 m away from the resort.</span></li>
-                          <li class="li-style"><span> The resort offers a variety of recreational sports including aqua zorbing and other outdoor games.</span></li>
-                          <li class="li-style"><span> Enjoy dining by the pool on Mediterranean cuisine at the in-house restaurant, Fig and Olive.</span></li>
-                      </ol>
-                  </p>
+              <h3 class="tab-bg-heading">User review</h3>
+              <div class="testimonial-box-container">
+                <div class="testimonial-box">
+                  <div class="box-top">
+                    <div class="profile">
+                      <div class="profile-img">
+                        <img src="./Images/icon1" alt="">
+                      </div>
+                      <div class="name-user">
+                        <strong>Touseeq Ijaz</strong>
+                        <span>@touseeqijazweb</span>
+                      </div>
+                    </div>
+                    <div class="reviews">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="far fa-star"></i>
+                    </div>
+                  </div>
+                  <div class="client-comment">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum alias
+                      ipsum explicabo vero, reiciendis atque labore fugit pariatur dolore
+                      quas cum itaque eligendi, esse doloribus, non error molestias autem ratione.</p>
+                  </div>
+                </div>
+                <div class="testimonial-box">
+                  <div class="box-top">
+                    <div class="profile">
+                      <div class="profile-img">
+                        <img src="./Images/icon2" alt="">
+                      </div>
+                      <div class="name-user">
+                        <strong>Touseeq Ijaz</strong>
+                        <span>@touseeqijazweb</span>
+                      </div>
+                    </div>
+                    <div class="reviews">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="far fa-star"></i>
+                    </div>
+                  </div>
+                  <div class="client-comment">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum alias
+                      ipsum explicabo vero, reiciendis atque labore fugit pariatur dolore
+                      quas cum itaque eligendi, esse doloribus, non error molestias autem ratione.</p>
+                  </div>
+                </div>
+                <div class="testimonial-box">
+                  <div class="box-top">
+                    <div class="profile">
+                      <div class="profile-img">
+                        <img src="./Images/icon3" alt="">
+                      </div>
+                      <div class="name-user">
+                        <strong>Touseeq Ijaz</strong>
+                        <span>@touseeqijazweb</span>
+                      </div>
+                    </div>
+                    <div class="reviews">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="far fa-star"></i>
+                    </div>
+                  </div>
+                  <div class="client-comment">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum alias
+                      ipsum explicabo vero, reiciendis atque labore fugit pariatur dolore
+                      quas cum itaque eligendi, esse doloribus, non error molestias autem ratione.</p>
+                  </div>
+                </div>
+                <div class="testimonial-box">
+                  <div class="box-top">
+                    <div class="profile">
+                      <div class="profile-img">
+                        <img src="./Images/icon1" alt="">
+                      </div>
+                      <div class="name-user">
+                        <strong>Touseeq Ijaz</strong>
+                        <span>@touseeqijazweb</span>
+                      </div>
+                    </div>
+                    <div class="reviews">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="far fa-star"></i>
+                    </div>
+                  </div>
+                  <div class="client-comment">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum alias
+                      ipsum explicabo vero, reiciendis atque labore fugit pariatur dolore
+                      quas cum itaque eligendi, esse doloribus, non error molestias autem ratione.</p>
+                  </div>
+                </div>
               </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-{% endblock body %} {% block js %}
-<script>
-var ProductImg = document.getElementById("ProductImg");
-var SmallImg = document.getElementsByClassName("small-img");
-console.log(SmallImg);
-for (let i in SmallImg) {
-  SmallImg[i].onclick = function () {
-    ProductImg.src = SmallImg[i].src;
-  };
-} 
-</script>
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
-<script>
-  // $(document).ready(function () {
-  //   // Add active class on tab click
-  //   $(".tab").on("click", function () {
-  //     var categoryId = $(this).data("id");
-  //     console.log(categoryId)
-  
-  //     $(".tab, .tab-pane").removeClass("active");
-  //     $(this).addClass("active");
-  //     $("#" + categoryId).addClass("active");
-  //   });
-  // });
-  tab = document.getElementsByClassName("tab");
-  console.log(tab)
-  console.log(tab)
-  
-</script>
-{% endblock js %}
+  {% endblock body %} {% block js %}
+
+  <script>
+    var ProductImg = document.getElementById("ProductImg");
+    var SmallImg = document.getElementsByClassName("small-img");
+    console.log(SmallImg);
+    for (let i in SmallImg) {
+      SmallImg[i].onclick = function () {
+        ProductImg.src = SmallImg[i].src;
+      };
+    } 
+  </script>
+  <script>
+    $(document).ready(function () {
+      // Add active class on tab click
+      $(".tab").on("click", function () {
+        var categoryId = $(this).data("id");
+
+        $(".tab, .tab-pane").removeClass("active");
+        $(this).addClass("active");
+        $("#" + categoryId).addClass("active");
+      });
+    });
+
+  </script>
+  {% endblock js %}
