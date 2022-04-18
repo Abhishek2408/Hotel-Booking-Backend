@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.contact_body {
+    height: 85vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f5fced;
+    position: relative;
+}
+
+.contact_body::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background: #7fc142;
+    clip-path: polygon(86% 0, 100% 0, 100% 100%, 60% 100%); 
+}
+
+.contact_container {
+    z-index: 12;
+    max-width: 1050px;
+    width: 100%;
+    background: #fff;
+    border-radius: 12px;
+    margin: 0 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+.contact_container .contact_contents {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 20px;
+}
+
+.contact_contents .image-box {
+    max-width: 55%;
+}
+
+.contact_contents .image-box img {
+    width: 100%;
+}
+
+.contact_contents .topic {
+    font-size: 22px;
+    font-weight: 500;
+    color: #7fc142;
+}
+
+.contact_contents form {
+    width: 40%;
+    margin-right: 30px;
+}
+
+.contact_contents .input-box {
+    height: 50px;
+    width: 100%;
+    margin: 16px 0;
+    position: relative;
+}
+
+.contact_contents .input-box input {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 6px;
+    font-size: 16px;
+    outline: none;
+    padding-left: 16px;
+    background: #f5fced;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.contact_contents .input-box input:focus,
+.contact_contents .input-box input:valid {
+    border-color: #7fc142;
+    background-color: #fff;
+}
+
+.contact_contents .input-box label {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    color: #636c72;
+    font-size: 15px;
+    pointer-events: none;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+}
+
+.contact_contents .input-box input:focus~label,
+.contact_contents .input-box input:valid~label {
+    top: 0;
+    left: 12px;
+    display: 14px;
+    color: #7fc142;
+    background: #fff;
+}
+
+.contact_contents .input-box input[type="submit"] {
+    color: #fff;
+    background: #7fc142;
+    padding-left: 0;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.contact_contents .input-box input[type="submit"]:hover {
+    background-color: #7fc142;
+}
+
+@media (max-width:800px) {
+
+    /* .contact_contents .image-box {
+                display: none;
+    
+            } */
+    .contact_contents {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contact_contents form {
+        width: 100%;
+        margin-right: 30px;
+        margin: 0;
+    }
+}

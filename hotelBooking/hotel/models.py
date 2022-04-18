@@ -17,3 +17,13 @@ class Hotel(models.Model):
 
     def __str__(self):
         return self.hotel_name
+
+class Contact(models.Model):
+    desc_id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=100)
+    email = models.CharField(max_length=100,default="")
+    phone = models.CharField(max_length=100,default="")
+    desc = models.CharField(max_length=500,default="")
+
+    def __str__(self):
+        return self.name

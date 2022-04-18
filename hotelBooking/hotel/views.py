@@ -1,8 +1,9 @@
+import email
 from math import ceil
-from unicodedata import category
+from unicodedata import category, name
 from django.http import HttpResponse
 from django.shortcuts import render
-from .models import Hotel
+from .models import Hotel,Contact
 from math import ceil
 
 # Create your views here.
@@ -40,7 +41,14 @@ def checkout(request,id):
     return HttpResponse("checkout")
 
 def contact(request):
-    return HttpResponse("contact")
+    if request.method=="POST":
+        name = request.POST.get('name','')
+        email = request.POST.get('email','')
+        phone = request.POST.get('phone','')
+        desc = request.POST.get('desc','')
+        contact = Contact(name=name,email=email,phone=phone,desc=desc)
+        contact.save()
+    return render(request,'contactus.html')
 
 def about(request):
     return render(request,'about.html')

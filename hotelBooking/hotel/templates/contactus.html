@@ -1,0 +1,42 @@
+{% extends 'base.html' %} {% load static %} {% block title%}Contact US{% endblock%} {% block head %}
+<link rel="stylesheet" href="{% static 'css/contactus.css' %}" />
+{% endblock head %}
+{% block body %}
+<div class="contact_body">
+    <div class="contact_container">
+        <div class="contact_contents">
+            <div class="image-box">
+                <img src="{% static 'images/contactus.png' %}" alt="">
+            </div>
+            <form action="/contact/" method="post"> {% csrf_token %}
+                <div class="topic">Send us a message</div>
+                <div class="input-box">
+                    <input type="text" name="name" required>
+                    <label for="name">Enter Your Name</label>
+                </div>
+                <div class="input-box">
+                    <input type="text" name="email" required>
+                    <label for="email">Enter Your Email</label>
+                </div>
+                <div class="input-box">
+                    <input type="tel" name="phone" required>
+                    <label for="tel">Enter Your Phone</label>
+                </div>
+                <!-- <div class="check-box">
+                <input type="radio" name="category" value="Student">
+                <label for="name">Student</label>
+                <input type="radio" name="category" value="Teacher">
+                <label for="name">Teacher</label>
+            </div> -->
+                <div class="input-box">
+                    <input type="text" name="desc" required>
+                    <label for="name">Enter Your Message</label>
+                </div>
+                <div class="input-box" required>
+                    <input type="submit">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock body %}
